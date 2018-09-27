@@ -17,7 +17,7 @@ MongoClient.connect(
 
     // db.collection('Todos').insertOne(
     //   {
-    //     text: 'Another to-do',
+    //     text: 'Finish jumper',
     //     completed: false,
     //   },
     //   (err, res) => {
@@ -29,20 +29,20 @@ MongoClient.connect(
     //   }
     // );
 
-    // db.collection('User').insertOne(
-    //   {
-    //     name: 'Brooke',
-    //     age: 37,
-    //     location: 'London',
-    //   },
-    //   (err, res) => {
-    //     if (err) {
-    //       return console.log('Error:', err);
-    //     }
+    db.collection('User').insertOne(
+      {
+        name: 'Tris',
+        age: 37,
+        location: 'Southampton',
+      },
+      (err, res) => {
+        if (err) {
+          return console.log('Error:', err);
+        }
 
-    //     console.log(res.ops[0]._id.getTimestamp());
-    //   }
-    // );
+        console.log(res.ops[0]._id.getTimestamp());
+      }
+    );
 
     client.close();
   }
