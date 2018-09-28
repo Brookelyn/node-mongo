@@ -7,6 +7,10 @@ const User = mongoose.model('User', {
     required: true,
     trim: true,
   },
+  name: {
+    type: String,
+    minLength: 1,
+  },
 });
 
 module.exports = { User };

@@ -21,6 +21,15 @@ app.get('/todos', (req, res) => {
   Todo.find().then(todos => res.send({ todos }), e => res.status(400).send(e));
 });
 
+app.post('/users', (req, res) => {
+  const user = new User({
+    name: req.body.name,
+    email: req.body.email,
+  });
+
+  user.save().then(doc => res.send(doc), e => console.log(e));
+});
+
 app.listen(3000, () => {
   console.log('Started on port 3000');
 });
